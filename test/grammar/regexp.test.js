@@ -41,6 +41,12 @@ describe('all grammar regular expressions', () => {
 		if (!fs.existsSync(fileName)) {
 			fs.writeFileSync(fileName, REGEXP_DUMP);
 		}
-		expect(fs.readFileSync(fileName, 'utf-8')).toBe(REGEXP_DUMP);
+		var content = fs.readFileSync(fileName, 'utf-8');
+		// ignore git lf->crlf transforms for purpose of test on windows platform
+		if (content[REGEXP_DUMP.indexOf('\n')] =='\r') {
+			console.warn(`ignoring line ending mismatch`)
+			content = content.replaceAll('\r\n', '\n');
+		}
+		expect(content).toBe(REGEXP_DUMP);
 	});
 });

@@ -8,21 +8,21 @@ const { getTestParser } = require('../get-test-parser');
 
 describe('DOMLocator', () => {
 	test('empty line number', () => {
-		const xml = [
-			'<scxml xmlns="http://www.w3.org/2005/07/scxml" version="1.0"',
-			'       profile="ecmascript" id="scxmlRoot" initial="start">',
-			'',
-			'  <!--',
-			'      some comment (next line is empty)',
-			'',
-			'  -->',
-			'',
-			'  <state id="start" name="start">',
-			'    <transition event="init" name="init" target="main_state" />',
-			'  </state>',
-			'',
-			'  </scxml>',
-		].join('\n');
+		const xml =
+			// language=XML
+			`<scxml xmlns="http://www.w3.org/2005/07/scxml" version="1.0"
+       profile="ecmascript" id="scxmlRoot" initial="start">
+
+  <!--
+      some comment (next line is empty)
+
+  -->
+
+  <state id="start" name="start">
+    <transition event="init" name="init" target="main_state" />
+  </state>
+
+  </scxml>`.replaceAll('\r\n', '\n'); // normalize line endings
 
 		const doc = new DOMParser().parseFromString(xml, MIME_TYPE.XML_TEXT);
 
@@ -35,13 +35,12 @@ describe('DOMLocator', () => {
 	});
 
 	test('node positions', () => {
-		const instruction = '<?xml version="1.0"?>';
-
 		const dom = new DOMParser().parseFromString(
-			`${instruction}<!-- aaa -->
+			// language=XML
+			`<?xml version="1.0"?><!-- aaa -->
 <test>
   <a attr="value"><![CDATA[1]]>something
-</a>x</test>`,
+</a>x<b   /></test >`.replaceAll('\r\n', '\n'), // normalize line endings
 			MIME_TYPE.XML_TEXT
 		);
 
@@ -50,40 +49,63 @@ describe('DOMLocator', () => {
 				// <?xml version="1.0"?>
 				lineNumber: 1,
 				columnNumber: 1,
+				starts: 0,
+				ends: 21,
 				nextSibling: {
 					nodeName: '#comment',
 					lineNumber: 1,
-					columnNumber: 1 + instruction.length,
+					columnNumber: 22,
+					starts: 21,
+					ends: 33,
 				},
 			},
 			documentElement: {
 				nodeName: 'test',
 				lineNumber: 2,
 				columnNumber: 1,
+				starts: 34,
+				ends: 102,
 				firstChild: {
 					nodeName: '#text',
 					lineNumber: 2,
 					columnNumber: 7,
+					starts: 40,
+					ends: 43,
 					nextSibling: {
 						nodeName: 'a',
 						lineNumber: 3,
 						columnNumber: 3,
+						starts: 43,
+						ends: 86,
 						firstChild: {
 							nodeName: '#cdata-section',
 							lineNumber: 3,
 							columnNumber: 19,
+							starts: 59,
+							ends: 72,
 						},
 						lastChild: {
 							textContent: 'something\n',
 							lineNumber: 3,
 							columnNumber: 32,
+							starts: 72,
+							ends: 82,
 						},
 					},
 				},
 				lastChild: {
-					textContent: 'x',
+					nodeName: 'b',
 					lineNumber: 4,
-					columnNumber: 5,
+					columnNumber: 6,
+					starts: 87,
+					ends: 94,
+					previousSibling: {
+						textContent: 'x',
+						lineNumber: 4,
+						columnNumber: 5,
+						starts: 86,
+						ends: 87,
+					},
 				},
 			},
 		});

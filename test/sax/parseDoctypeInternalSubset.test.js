@@ -118,7 +118,7 @@ describe('parseDoctypeCommentOrCData', () => {
 
 		expect(errorHandler.fatalError).not.toHaveBeenCalled();
 		expect(returned).toBe(source.length);
-		expect(domBuilder.startDTD).toHaveBeenCalledWith(Name, '"pubId"', '"sysId"', pi);
+		expect(domBuilder.startDTD).toHaveBeenCalledWith(Name, '"pubId"', '"sysId"', pi, 0, 55);
 		expect(domBuilder.endDTD).toHaveBeenCalled();
 	});
 });
