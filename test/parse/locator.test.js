@@ -112,7 +112,8 @@ describe('DOMLocator', () => {
 	});
 
 	test('attribute position', () => {
-		const xml = '<html><body title="1&lt;2"><table>&lt;;test</table></body></html>';
+		const xml = `<html><body title = "1&lt;2" data-item ="x"
+data-item2= "y" data-item3 data-item4=k><table>&lt;;test</table></body></html>`;
 		const { errors, parser } = getTestParser({
 			locator: { systemId: 'c:/test/1.xml' },
 		});
@@ -121,12 +122,41 @@ describe('DOMLocator', () => {
 
 		expect({ actual: doc.toString(), ...(errors.length ? { errors } : undefined) }).toMatchSnapshot();
 
-		const attr = doc.documentElement.firstChild.attributes.item(0);
+		let attributes = doc.documentElement.firstChild.attributes;
+		const attrs = [...attributes];
 
-		expect(attr).toMatchObject({
-			lineNumber: 1,
-			columnNumber: 19, // position of the starting quote
-		});
+		expect(attrs).toMatchObject([
+			{
+				lineNumber: 1,
+				columnNumber: 13,
+				starts: 12,
+				ends: 28,
+			},
+			{
+				lineNumber: 1,
+				columnNumber: 30,
+				starts: 29,
+				ends: 43,
+			},
+			{
+				lineNumber: 2,
+				columnNumber: 1,
+				starts: 44,
+				ends: 59,
+			},
+			{
+				lineNumber: 2,
+				columnNumber: 17,
+				starts: 60,
+				ends: 70,
+			},
+			{
+				lineNumber: 2,
+				columnNumber: 28,
+				starts: 71,
+				ends: 83,
+			},
+		]);
 	});
 
 	test('logs error positions', () => {

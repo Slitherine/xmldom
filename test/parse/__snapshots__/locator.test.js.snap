@@ -2,7 +2,18 @@
 
 exports[`DOMLocator attribute position 1`] = `
 {
-  "actual": "<html xmlns="http://www.w3.org/1999/xhtml"><body title="1&lt;2"><table>&lt;;test</table></body></html>",
+  "actual": "<html xmlns="http://www.w3.org/1999/xhtml"><body title="1&lt;2" data-item="x" data-item2="y" data-item3="data-item3" data-item4="k"><table>&lt;;test</table></body></html>",
+  "errors": [
+    [
+      "warning",
+      "attribute "k" missed quot(")!",
+      {
+        "columnNumber": 48,
+        "lineNumber": 2,
+        "starts": 91,
+      },
+    ],
+  ],
 }
 `;
 
