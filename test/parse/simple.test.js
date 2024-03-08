@@ -55,4 +55,28 @@ describe('parse', () => {
 			expect(() => parser.parseFromString(testValue, MIME_TYPE.XML_TEXT)).toThrow(ParseError);
 		});
 	});
+
+	test('option for errors as text nodes', () => {
+		const { DOMParser } = require('../../lib/dom-parser');
+		const parser = new DOMParser({ locator: true, errorsAsTextNodes: true });
+
+		const malformed = '<root><child></><><child =</root>';
+
+		let dom;
+
+		expect(() => (dom = parser.parseFromString(malformed, MIME_TYPE.XML_TEXT))).not.toThrow();
+
+		expect(dom).toMatchObject({
+			documentElement: {
+				nodeName: 'root',
+				firstChild: {
+					nodeName: 'child',
+					firstChild: {
+						nodeName: '#text',
+						nodeValue: '</><><child =',
+					},
+				},
+			},
+		});
+	});
 });

@@ -18,6 +18,7 @@ exports[`errorHandle should encode < literal when not part of a tag 1`] = `
       {
         "columnNumber": 17,
         "lineNumber": 1,
+        "starts": 16,
       },
     ],
   ],

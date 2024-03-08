@@ -15,6 +15,7 @@ exports[`entity replacement ignores js prototype chain should not pick up 'entit
       {
         "columnNumber": 44,
         "lineNumber": 5,
+        "starts": 137,
       },
     ],
     [
@@ -23,6 +24,7 @@ exports[`entity replacement ignores js prototype chain should not pick up 'entit
       {
         "columnNumber": 44,
         "lineNumber": 5,
+        "starts": 137,
       },
     ],
     [
@@ -31,6 +33,7 @@ exports[`entity replacement ignores js prototype chain should not pick up 'entit
       {
         "columnNumber": 44,
         "lineNumber": 5,
+        "starts": 137,
       },
     ],
   ],

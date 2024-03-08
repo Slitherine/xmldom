@@ -10,6 +10,7 @@ exports[`html normalizer <Label onClick=doClick..">Hello, World</Label> 1`] = `
       {
         "columnNumber": 27,
         "lineNumber": 1,
+        "starts": 26,
       },
     ],
   ],
@@ -24,24 +25,27 @@ exports[`html normalizer <div a=& bb c d=123&&456/> 1`] = `
       "warning",
       "attribute "&" missed quot(")!!",
       {
-        "columnNumber": 17,
+        "columnNumber": 15,
         "lineNumber": 1,
+        "starts": 14,
       },
     ],
     [
       "warning",
       "attribute "123&&456" missed quot(")!",
       {
-        "columnNumber": 17,
+        "columnNumber": 15,
         "lineNumber": 1,
+        "starts": 14,
       },
     ],
     [
       "error",
       "entity not matching Reference production: &456",
       {
-        "columnNumber": 17,
+        "columnNumber": 15,
         "lineNumber": 1,
+        "starts": 14,
       },
     ],
   ],
@@ -56,8 +60,9 @@ exports[`html normalizer <div test="a<b&&a< c && a>d"></div> 1`] = `
       "error",
       "entity not found:&a",
       {
-        "columnNumber": 11,
+        "columnNumber": 6,
         "lineNumber": 1,
+        "starts": 5,
       },
     ],
   ],
@@ -80,6 +85,7 @@ exports[`html normalizer <div>&amp;&lt;123&456<789;&&</div> 1`] = `
       {
         "columnNumber": 23,
         "lineNumber": 1,
+        "starts": 22,
       },
     ],
     [
@@ -88,6 +94,7 @@ exports[`html normalizer <div>&amp;&lt;123&456<789;&&</div> 1`] = `
       {
         "columnNumber": 23,
         "lineNumber": 1,
+        "starts": 22,
       },
     ],
   ],
@@ -110,6 +117,7 @@ exports[`html normalizer <div><123e>&<a<br/></div> 1`] = `
       {
         "columnNumber": 15,
         "lineNumber": 1,
+        "starts": 14,
       },
     ],
     [
@@ -118,6 +126,7 @@ exports[`html normalizer <div><123e>&<a<br/></div> 1`] = `
       {
         "columnNumber": 15,
         "lineNumber": 1,
+        "starts": 14,
       },
     ],
   ],
@@ -188,6 +197,7 @@ exports[`html normalizer text/html: script <textarea>alert(a<b&&c?"<br>":">>");<
       {
         "columnNumber": 1,
         "lineNumber": 1,
+        "starts": 0,
       },
     ],
   ],
@@ -206,6 +216,7 @@ exports[`html normalizer text/xml: script <input type="button" disabled></input>
       {
         "columnNumber": 22,
         "lineNumber": 1,
+        "starts": 21,
       },
     ],
   ],
@@ -222,6 +233,7 @@ exports[`html normalizer text/xml: script <input type="checkbox" checked></input
       {
         "columnNumber": 24,
         "lineNumber": 1,
+        "starts": 23,
       },
     ],
   ],
@@ -238,6 +250,7 @@ exports[`html normalizer text/xml: script <option selected></option>: reported 1
       {
         "columnNumber": 9,
         "lineNumber": 1,
+        "starts": 8,
       },
     ],
   ],
@@ -260,6 +273,7 @@ exports[`html normalizer text/xml: script <script>alert(a<b&&c?"<br/>":">>");</s
       {
         "columnNumber": 28,
         "lineNumber": 1,
+        "starts": 27,
       },
     ],
     [
@@ -268,6 +282,7 @@ exports[`html normalizer text/xml: script <script>alert(a<b&&c?"<br/>":">>");</s
       {
         "columnNumber": 28,
         "lineNumber": 1,
+        "starts": 27,
       },
     ],
   ],
@@ -288,8 +303,9 @@ exports[`html normalizer unclosed html <html title = 1/> 1`] = `
       "warning",
       "attribute "1" missed quot(")!",
       {
-        "columnNumber": 15,
+        "columnNumber": NaN,
         "lineNumber": 1,
+        "starts": undefined,
       },
     ],
   ],
@@ -304,8 +320,9 @@ exports[`html normalizer unclosed html <html title =1/2></html> 1`] = `
       "warning",
       "attribute "1/2" missed quot(")!",
       {
-        "columnNumber": 14,
+        "columnNumber": NaN,
         "lineNumber": 1,
+        "starts": undefined,
       },
     ],
   ],
@@ -326,8 +343,9 @@ exports[`html normalizer unclosed html <html title= 1/> 1`] = `
       "warning",
       "attribute "1" missed quot(")!",
       {
-        "columnNumber": 14,
+        "columnNumber": 7,
         "lineNumber": 1,
+        "starts": 6,
       },
     ],
   ],

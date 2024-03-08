@@ -25,6 +25,7 @@ exports[`DOMLocator logs error positions 1`] = `
     {
       "columnNumber": 3,
       "lineNumber": 2,
+      "starts": 9,
     },
   ],
 ]

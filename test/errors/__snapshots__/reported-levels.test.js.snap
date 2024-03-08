@@ -8,6 +8,7 @@ exports[`SYNTAX_AttributeMissingEndingQuote with mimeType text/html should be re
     {
       "columnNumber": 7,
       "lineNumber": 1,
+      "starts": 6,
     },
   ],
 ]
@@ -28,6 +29,7 @@ exports[`SYNTAX_AttributeMissingEndingQuote with mimeType text/xml should be rep
     {
       "columnNumber": 7,
       "lineNumber": 1,
+      "starts": 6,
     },
   ],
 ]
@@ -48,6 +50,7 @@ exports[`SYNTAX_ElementClosingNotConnected with mimeType text/html should be rep
     {
       "columnNumber": 7,
       "lineNumber": 1,
+      "starts": 6,
     },
   ],
 ]
@@ -68,6 +71,7 @@ exports[`SYNTAX_ElementClosingNotConnected with mimeType text/xml should be repo
     {
       "columnNumber": 7,
       "lineNumber": 1,
+      "starts": 6,
     },
   ],
 ]
@@ -88,6 +92,7 @@ exports[`SYNTAX_InvalidAttributeName with mimeType text/html should be reported 
     {
       "columnNumber": 7,
       "lineNumber": 1,
+      "starts": 6,
     },
   ],
 ]
@@ -108,6 +113,7 @@ exports[`SYNTAX_InvalidAttributeName with mimeType text/xml should be reported 1
     {
       "columnNumber": 7,
       "lineNumber": 1,
+      "starts": 6,
     },
   ],
 ]
@@ -128,6 +134,7 @@ exports[`SYNTAX_InvalidTagName with mimeType text/html should be reported 1`] = 
     {
       "columnNumber": 7,
       "lineNumber": 1,
+      "starts": 6,
     },
   ],
 ]
@@ -148,6 +155,7 @@ exports[`SYNTAX_InvalidTagName with mimeType text/xml should be reported 1`] = `
     {
       "columnNumber": 7,
       "lineNumber": 1,
+      "starts": 6,
     },
   ],
 ]
@@ -172,6 +180,7 @@ exports[`WF_AttValue_CleanAttrVals_MissingClosingQuote with mimeType text/html s
     {
       "columnNumber": 7,
       "lineNumber": 1,
+      "starts": 6,
     },
   ],
   [
@@ -180,6 +189,7 @@ exports[`WF_AttValue_CleanAttrVals_MissingClosingQuote with mimeType text/html s
     {
       "columnNumber": 7,
       "lineNumber": 1,
+      "starts": 6,
     },
   ],
 ]
@@ -193,8 +203,9 @@ exports[`WF_AttributeMissingQuote with mimeType text/html should be reported 1`]
     "warning",
     "attribute "value" missed quot(")!",
     {
-      "columnNumber": 11,
+      "columnNumber": 6,
       "lineNumber": 1,
+      "starts": 5,
     },
   ],
 ]
@@ -213,8 +224,9 @@ exports[`WF_AttributeMissingQuote with mimeType text/xml should be reported 1`] 
     "warning",
     "attribute "value" missed quot(")!",
     {
-      "columnNumber": 11,
+      "columnNumber": 6,
       "lineNumber": 1,
+      "starts": 5,
     },
   ],
 ]
@@ -233,8 +245,9 @@ exports[`WF_AttributeMissingQuote2 with mimeType text/html should be reported 1`
     "warning",
     "attribute "&" missed quot(")!!",
     {
-      "columnNumber": 12,
+      "columnNumber": 10,
       "lineNumber": 1,
+      "starts": 9,
     },
   ],
 ]
@@ -253,8 +266,9 @@ exports[`WF_AttributeMissingQuote2 with mimeType text/xml should be reported 1`]
     "warning",
     "attribute "&" missed quot(")!!",
     {
-      "columnNumber": 12,
+      "columnNumber": 10,
       "lineNumber": 1,
+      "starts": 9,
     },
   ],
 ]
@@ -275,6 +289,7 @@ exports[`WF_AttributeMissingStartingQuote with mimeType text/html should be repo
     {
       "columnNumber": 11,
       "lineNumber": 1,
+      "starts": 10,
     },
   ],
 ]
@@ -295,6 +310,7 @@ exports[`WF_AttributeMissingStartingQuote with mimeType text/xml should be repor
     {
       "columnNumber": 11,
       "lineNumber": 1,
+      "starts": 10,
     },
   ],
 ]
@@ -317,6 +333,7 @@ exports[`WF_AttributeMissingValue with mimeType text/xml should be reported 1`] 
     {
       "columnNumber": 6,
       "lineNumber": 1,
+      "starts": 5,
     },
   ],
 ]
@@ -339,6 +356,7 @@ exports[`WF_AttributeMissingValue2 with mimeType text/xml should be reported 1`]
     {
       "columnNumber": 11,
       "lineNumber": 1,
+      "starts": 10,
     },
   ],
   [
@@ -347,6 +365,7 @@ exports[`WF_AttributeMissingValue2 with mimeType text/xml should be reported 1`]
     {
       "columnNumber": 11,
       "lineNumber": 1,
+      "starts": 10,
     },
   ],
 ]
@@ -365,8 +384,9 @@ exports[`WF_AttributeValueMustAfterEqual with mimeType text/html should be repor
     "warning",
     "attribute value must after "="",
     {
-      "columnNumber": 10,
+      "columnNumber": 6,
       "lineNumber": 1,
+      "starts": 5,
     },
   ],
 ]
@@ -385,8 +405,9 @@ exports[`WF_AttributeValueMustAfterEqual with mimeType text/xml should be report
     "warning",
     "attribute value must after "="",
     {
-      "columnNumber": 10,
+      "columnNumber": 6,
       "lineNumber": 1,
+      "starts": 5,
     },
   ],
 ]
@@ -411,6 +432,7 @@ exports[`WF_ElementTypeMatch_UnclosedXmlTag_IncompleteStartTag with mimeType tex
     {
       "columnNumber": 1,
       "lineNumber": 1,
+      "starts": 0,
     },
   ],
 ]
@@ -424,6 +446,7 @@ exports[`WF_Entity_ReferenceProduction with mimeType text/html should be reporte
     {
       "columnNumber": 6,
       "lineNumber": 1,
+      "starts": 5,
     },
   ],
 ]
@@ -444,6 +467,7 @@ exports[`WF_Entity_ReferenceProduction with mimeType text/xml should be reported
     {
       "columnNumber": 6,
       "lineNumber": 1,
+      "starts": 5,
     },
   ],
 ]
@@ -462,8 +486,9 @@ exports[`WF_Entity_ReferenceProduction_Attr with mimeType text/html should be re
     "error",
     "entity not matching Reference production: &1;",
     {
-      "columnNumber": 11,
+      "columnNumber": 6,
       "lineNumber": 1,
+      "starts": 5,
     },
   ],
 ]
@@ -482,8 +507,9 @@ exports[`WF_Entity_ReferenceProduction_Attr with mimeType text/xml should be rep
     "error",
     "entity not matching Reference production: &1;",
     {
-      "columnNumber": 11,
+      "columnNumber": 6,
       "lineNumber": 1,
+      "starts": 5,
     },
   ],
 ]
@@ -506,6 +532,7 @@ exports[`WF_Entity_ReferenceProduction_Script with mimeType text/xml should be r
     {
       "columnNumber": 9,
       "lineNumber": 1,
+      "starts": 8,
     },
   ],
 ]
@@ -526,6 +553,7 @@ exports[`WF_EntityDeclared with mimeType text/html should be reported 1`] = `
     {
       "columnNumber": 6,
       "lineNumber": 1,
+      "starts": 5,
     },
   ],
 ]
@@ -546,6 +574,7 @@ exports[`WF_EntityDeclared with mimeType text/xml should be reported 1`] = `
     {
       "columnNumber": 6,
       "lineNumber": 1,
+      "starts": 5,
     },
   ],
 ]
@@ -564,8 +593,9 @@ exports[`WF_EntityDeclared_Attr with mimeType text/html should be reported 1`] =
     "error",
     "entity not found:&e;",
     {
-      "columnNumber": 11,
+      "columnNumber": 6,
       "lineNumber": 1,
+      "starts": 5,
     },
   ],
 ]
@@ -584,8 +614,9 @@ exports[`WF_EntityDeclared_Attr with mimeType text/xml should be reported 1`] = 
     "error",
     "entity not found:&e;",
     {
-      "columnNumber": 11,
+      "columnNumber": 6,
       "lineNumber": 1,
+      "starts": 5,
     },
   ],
 ]
@@ -608,6 +639,7 @@ exports[`WF_EntityDeclared_Script with mimeType text/xml should be reported 1`] 
     {
       "columnNumber": 9,
       "lineNumber": 1,
+      "starts": 8,
     },
   ],
 ]
@@ -630,6 +662,7 @@ exports[`WF_EntityRef with mimeType text/xml should be reported 1`] = `
     {
       "columnNumber": 6,
       "lineNumber": 1,
+      "starts": 5,
     },
   ],
 ]
@@ -650,8 +683,9 @@ exports[`WF_EntityRef_Attr with mimeType text/xml should be reported 1`] = `
     "error",
     "EntityRef: expecting ;",
     {
-      "columnNumber": 11,
+      "columnNumber": 6,
       "lineNumber": 1,
+      "starts": 5,
     },
   ],
 ]
@@ -674,6 +708,7 @@ exports[`WF_EntityRef_Script with mimeType text/xml should be reported 1`] = `
     {
       "columnNumber": 9,
       "lineNumber": 1,
+      "starts": 8,
     },
   ],
 ]
@@ -696,6 +731,7 @@ exports[`WF_SingleRootElement_CDataOutside with mimeType text/html should not be
     {
       "columnNumber": 1,
       "lineNumber": 1,
+      "starts": 0,
     },
   ],
 ]
@@ -709,6 +745,7 @@ exports[`WF_SingleRootElement_ContentAfter with mimeType text/html should not be
     {
       "columnNumber": 1,
       "lineNumber": 1,
+      "starts": 0,
     },
   ],
 ]
@@ -722,6 +759,7 @@ exports[`WF_SingleRootElement_ContentAfter with mimeType text/xml should be repo
     {
       "columnNumber": 1,
       "lineNumber": 1,
+      "starts": 0,
     },
   ],
 ]
@@ -744,6 +782,7 @@ exports[`WF_SingleRootElement_ContentBefore with mimeType text/xml should be rep
     {
       "columnNumber": 12,
       "lineNumber": 1,
+      "starts": 11,
     },
   ],
 ]

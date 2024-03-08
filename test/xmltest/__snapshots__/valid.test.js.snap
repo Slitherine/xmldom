@@ -165,26 +165,12 @@ exports[`xmltest/valid standalone should match 016.xml with snapshot 1`] = `
 }
 `;
 
-exports[`xmltest/valid standalone should match 016.xml with snapshot: caught 1`] = `
-{
-  "error": [ParseError: Reporting error "element parse error: ReferenceError: end is not defined" caused TypeError: expect(...).not.stringMatching is not a function],
-  "expected": "<doc><?pi ?></doc>",
-}
-`;
-
 exports[`xmltest/valid standalone should match 017.xml with snapshot 1`] = `
 {
   "actual": "<!DOCTYPE doc [
 <!ELEMENT doc (#PCDATA)>
 ]>
 <doc><?pi some data ? > <??></doc>",
-  "expected": "<doc><?pi some data ? > <??></doc>",
-}
-`;
-
-exports[`xmltest/valid standalone should match 017.xml with snapshot: caught 1`] = `
-{
-  "error": [ParseError: Invalid processing instruction starting at position 68],
   "expected": "<doc><?pi some data ? > <??></doc>",
 }
 `;
@@ -253,16 +239,10 @@ exports[`xmltest/valid standalone should match 023.xml with snapshot 1`] = `
       {
         "columnNumber": 6,
         "lineNumber": 5,
+        "starts": 64,
       },
     ],
   ],
-  "expected": "<doc></doc>",
-}
-`;
-
-exports[`xmltest/valid standalone should match 023.xml with snapshot: caught 1`] = `
-{
-  "error": [ParseError: Reporting error "entity not found:&e;" caused TypeError: expect(...).not.stringMatching is not a function],
   "expected": "<doc></doc>",
 }
 `;
@@ -282,16 +262,10 @@ exports[`xmltest/valid standalone should match 024.xml with snapshot 1`] = `
       {
         "columnNumber": 6,
         "lineNumber": 6,
+        "starts": 100,
       },
     ],
   ],
-  "expected": "<doc><foo></foo></doc>",
-}
-`;
-
-exports[`xmltest/valid standalone should match 024.xml with snapshot: caught 1`] = `
-{
-  "error": [ParseError: Reporting error "entity not found:&e;" caused TypeError: expect(...).not.stringMatching is not a function],
   "expected": "<doc><foo></foo></doc>",
 }
 `;
@@ -340,13 +314,6 @@ exports[`xmltest/valid standalone should match 028.xml with snapshot 1`] = `
 }
 `;
 
-exports[`xmltest/valid standalone should match 028.xml with snapshot: caught 1`] = `
-{
-  "error": [ParseError: Reporting error "element parse error: ReferenceError: end is not defined" caused TypeError: expect(...).not.stringMatching is not a function],
-  "expected": "<doc></doc>",
-}
-`;
-
 exports[`xmltest/valid standalone should match 029.xml with snapshot 1`] = `
 {
   "actual": "<?xml version='1.0'?>
@@ -354,13 +321,6 @@ exports[`xmltest/valid standalone should match 029.xml with snapshot 1`] = `
 <!ELEMENT doc (#PCDATA)>
 ]>
 <doc/>",
-  "expected": "<doc></doc>",
-}
-`;
-
-exports[`xmltest/valid standalone should match 029.xml with snapshot: caught 1`] = `
-{
-  "error": [ParseError: Reporting error "element parse error: ReferenceError: end is not defined" caused TypeError: expect(...).not.stringMatching is not a function],
   "expected": "<doc></doc>",
 }
 `;
@@ -376,13 +336,6 @@ exports[`xmltest/valid standalone should match 030.xml with snapshot 1`] = `
 }
 `;
 
-exports[`xmltest/valid standalone should match 030.xml with snapshot: caught 1`] = `
-{
-  "error": [ParseError: Reporting error "element parse error: ReferenceError: end is not defined" caused TypeError: expect(...).not.stringMatching is not a function],
-  "expected": "<doc></doc>",
-}
-`;
-
 exports[`xmltest/valid standalone should match 031.xml with snapshot 1`] = `
 {
   "actual": "<?xml version='1.0' encoding="UTF-8"?>
@@ -390,13 +343,6 @@ exports[`xmltest/valid standalone should match 031.xml with snapshot 1`] = `
 <!ELEMENT doc (#PCDATA)>
 ]>
 <doc/>",
-  "expected": "<doc></doc>",
-}
-`;
-
-exports[`xmltest/valid standalone should match 031.xml with snapshot: caught 1`] = `
-{
-  "error": [ParseError: Reporting error "element parse error: ReferenceError: end is not defined" caused TypeError: expect(...).not.stringMatching is not a function],
   "expected": "<doc></doc>",
 }
 `;
@@ -412,13 +358,6 @@ exports[`xmltest/valid standalone should match 032.xml with snapshot 1`] = `
 }
 `;
 
-exports[`xmltest/valid standalone should match 032.xml with snapshot: caught 1`] = `
-{
-  "error": [ParseError: Reporting error "element parse error: ReferenceError: end is not defined" caused TypeError: expect(...).not.stringMatching is not a function],
-  "expected": "<doc></doc>",
-}
-`;
-
 exports[`xmltest/valid standalone should match 033.xml with snapshot 1`] = `
 {
   "actual": "<?xml version='1.0' encoding="UTF-8" standalone='yes'?>
@@ -426,13 +365,6 @@ exports[`xmltest/valid standalone should match 033.xml with snapshot 1`] = `
 <!ELEMENT doc (#PCDATA)>
 ]>
 <doc/>",
-  "expected": "<doc></doc>",
-}
-`;
-
-exports[`xmltest/valid standalone should match 033.xml with snapshot: caught 1`] = `
-{
-  "error": [ParseError: Reporting error "element parse error: ReferenceError: end is not defined" caused TypeError: expect(...).not.stringMatching is not a function],
   "expected": "<doc></doc>",
 }
 `;
@@ -468,13 +400,6 @@ exports[`xmltest/valid standalone should match 036.xml with snapshot 1`] = `
 }
 `;
 
-exports[`xmltest/valid standalone should match 036.xml with snapshot: caught 1`] = `
-{
-  "error": [ParseError: Reporting error "element parse error: ReferenceError: end is not defined" caused TypeError: expect(...).not.stringMatching is not a function],
-  "expected": "<doc></doc><?pi data?>",
-}
-`;
-
 exports[`xmltest/valid standalone should match 037.xml with snapshot 1`] = `
 {
   "actual": "<!DOCTYPE doc [
@@ -504,13 +429,6 @@ exports[`xmltest/valid standalone should match 039.xml with snapshot 1`] = `
 <!ELEMENT doc (#PCDATA)>
 ]>
 <doc/>",
-  "expected": "<?pi data?><doc></doc>",
-}
-`;
-
-exports[`xmltest/valid standalone should match 039.xml with snapshot: caught 1`] = `
-{
-  "error": [ParseError: Reporting error "element parse error: ReferenceError: end is not defined" caused TypeError: expect(...).not.stringMatching is not a function],
   "expected": "<?pi data?><doc></doc>",
 }
 `;
@@ -665,16 +583,10 @@ exports[`xmltest/valid standalone should match 053.xml with snapshot 1`] = `
       {
         "columnNumber": 6,
         "lineNumber": 6,
+        "starts": 81,
       },
     ],
   ],
-  "expected": "<doc><e></e></doc>",
-}
-`;
-
-exports[`xmltest/valid standalone should match 053.xml with snapshot: caught 1`] = `
-{
-  "error": [ParseError: Reporting error "entity not found:&e;" caused TypeError: expect(...).not.stringMatching is not a function],
   "expected": "<doc><e></e></doc>",
 }
 `;
@@ -698,13 +610,6 @@ exports[`xmltest/valid standalone should match 055.xml with snapshot 1`] = `
 ]>
 <?pi data?>
 <doc/>",
-  "expected": "<?pi data?><doc></doc>",
-}
-`;
-
-exports[`xmltest/valid standalone should match 055.xml with snapshot: caught 1`] = `
-{
-  "error": [ParseError: Reporting error "element parse error: ReferenceError: end is not defined" caused TypeError: expect(...).not.stringMatching is not a function],
   "expected": "<?pi data?><doc></doc>",
 }
 `;
@@ -832,18 +737,12 @@ exports[`xmltest/valid standalone should match 066.xml with snapshot 1`] = `
       "error",
       "entity not found:&e1;",
       {
-        "columnNumber": 9,
+        "columnNumber": 6,
         "lineNumber": 7,
+        "starts": 131,
       },
     ],
   ],
-  "expected": "<doc a1="&quot;"></doc>",
-}
-`;
-
-exports[`xmltest/valid standalone should match 066.xml with snapshot: caught 1`] = `
-{
-  "error": [ParseError: Reporting error "entity not found:&e1;" caused TypeError: expect(...).not.stringMatching is not a function],
   "expected": "<doc a1="&quot;"></doc>",
 }
 `;
@@ -873,16 +772,10 @@ exports[`xmltest/valid standalone should match 068.xml with snapshot 1`] = `
       {
         "columnNumber": 6,
         "lineNumber": 5,
+        "starts": 69,
       },
     ],
   ],
-  "expected": "<doc>&#13;</doc>",
-}
-`;
-
-exports[`xmltest/valid standalone should match 068.xml with snapshot: caught 1`] = `
-{
-  "error": [ParseError: Reporting error "entity not found:&e;" caused TypeError: expect(...).not.stringMatching is not a function],
   "expected": "<doc>&#13;</doc>",
 }
 `;
@@ -1078,16 +971,10 @@ exports[`xmltest/valid standalone should match 085.xml with snapshot 1`] = `
       {
         "columnNumber": 6,
         "lineNumber": 6,
+        "starts": 86,
       },
     ],
   ],
-  "expected": "<doc></doc>",
-}
-`;
-
-exports[`xmltest/valid standalone should match 085.xml with snapshot: caught 1`] = `
-{
-  "error": [ParseError: Reporting error "entity not found:&e;" caused TypeError: expect(...).not.stringMatching is not a function],
   "expected": "<doc></doc>",
 }
 `;
@@ -1107,16 +994,10 @@ exports[`xmltest/valid standalone should match 086.xml with snapshot 1`] = `
       {
         "columnNumber": 6,
         "lineNumber": 6,
+        "starts": 84,
       },
     ],
   ],
-  "expected": "<doc></doc>",
-}
-`;
-
-exports[`xmltest/valid standalone should match 086.xml with snapshot: caught 1`] = `
-{
-  "error": [ParseError: Reporting error "entity not found:&e;" caused TypeError: expect(...).not.stringMatching is not a function],
   "expected": "<doc></doc>",
 }
 `;
@@ -1136,16 +1017,10 @@ exports[`xmltest/valid standalone should match 087.xml with snapshot 1`] = `
       {
         "columnNumber": 6,
         "lineNumber": 6,
+        "starts": 91,
       },
     ],
   ],
-  "expected": "<doc><foo></foo></doc>",
-}
-`;
-
-exports[`xmltest/valid standalone should match 087.xml with snapshot: caught 1`] = `
-{
-  "error": [ParseError: Reporting error "entity not found:&e;" caused TypeError: expect(...).not.stringMatching is not a function],
   "expected": "<doc><foo></foo></doc>",
 }
 `;
@@ -1164,16 +1039,10 @@ exports[`xmltest/valid standalone should match 088.xml with snapshot 1`] = `
       {
         "columnNumber": 6,
         "lineNumber": 5,
+        "starts": 72,
       },
     ],
   ],
-  "expected": "<doc>&lt;foo&gt;</doc>",
-}
-`;
-
-exports[`xmltest/valid standalone should match 088.xml with snapshot: caught 1`] = `
-{
-  "error": [ParseError: Reporting error "entity not found:&e;" caused TypeError: expect(...).not.stringMatching is not a function],
   "expected": "<doc>&lt;foo&gt;</doc>",
 }
 `;
@@ -1192,16 +1061,10 @@ exports[`xmltest/valid standalone should match 089.xml with snapshot 1`] = `
       {
         "columnNumber": 6,
         "lineNumber": 5,
+        "starts": 93,
       },
     ],
   ],
-  "expected": "<doc>𐀀􏿽􏿿</doc>",
-}
-`;
-
-exports[`xmltest/valid standalone should match 089.xml with snapshot: caught 1`] = `
-{
-  "error": [ParseError: Reporting error "entity not found:&e;" caused TypeError: expect(...).not.stringMatching is not a function],
   "expected": "<doc>𐀀􏿽􏿿</doc>",
 }
 `;
@@ -1322,14 +1185,6 @@ y?></doc>",
 }
 `;
 
-exports[`xmltest/valid standalone should match 098.xml with snapshot: caught 1`] = `
-{
-  "error": [ParseError: Reporting error "element parse error: ReferenceError: end is not defined" caused TypeError: expect(...).not.stringMatching is not a function],
-  "expected": "<doc><?pi x
-y?></doc>",
-}
-`;
-
 exports[`xmltest/valid standalone should match 099.xml with snapshot 1`] = `
 {
   "actual": "<?xml version="1.0" encoding="utf-8"?>
@@ -1337,13 +1192,6 @@ exports[`xmltest/valid standalone should match 099.xml with snapshot 1`] = `
 <!ELEMENT doc (#PCDATA)>
 ]>
 <doc/>",
-  "expected": "<doc></doc>",
-}
-`;
-
-exports[`xmltest/valid standalone should match 099.xml with snapshot: caught 1`] = `
-{
-  "error": [ParseError: Reporting error "element parse error: ReferenceError: end is not defined" caused TypeError: expect(...).not.stringMatching is not a function],
   "expected": "<doc></doc>",
 }
 `;
@@ -1449,18 +1297,12 @@ exports[`xmltest/valid standalone should match 108.xml with snapshot 1`] = `
       "error",
       "entity not found:&e;",
       {
-        "columnNumber": 8,
+        "columnNumber": 6,
         "lineNumber": 7,
+        "starts": 97,
       },
     ],
   ],
-  "expected": "<doc a="x y"></doc>",
-}
-`;
-
-exports[`xmltest/valid standalone should match 108.xml with snapshot: caught 1`] = `
-{
-  "error": [ParseError: Reporting error "entity not found:&e;" caused TypeError: expect(...).not.stringMatching is not a function],
   "expected": "<doc a="x y"></doc>",
 }
 `;
@@ -1489,18 +1331,12 @@ exports[`xmltest/valid standalone should match 110.xml with snapshot 1`] = `
       "error",
       "entity not found:&e;",
       {
-        "columnNumber": 8,
+        "columnNumber": 6,
         "lineNumber": 6,
+        "starts": 106,
       },
     ],
   ],
-  "expected": "<doc a="x  y"></doc>",
-}
-`;
-
-exports[`xmltest/valid standalone should match 110.xml with snapshot: caught 1`] = `
-{
-  "error": [ParseError: Reporting error "entity not found:&e;" caused TypeError: expect(...).not.stringMatching is not a function],
   "expected": "<doc a="x  y"></doc>",
 }
 `;
@@ -1552,16 +1388,10 @@ exports[`xmltest/valid standalone should match 114.xml with snapshot 1`] = `
       {
         "columnNumber": 6,
         "lineNumber": 5,
+        "starts": 81,
       },
     ],
   ],
-  "expected": "<doc>&amp;foo;</doc>",
-}
-`;
-
-exports[`xmltest/valid standalone should match 114.xml with snapshot: caught 1`] = `
-{
-  "error": [ParseError: Reporting error "entity not found:&e;" caused TypeError: expect(...).not.stringMatching is not a function],
   "expected": "<doc>&amp;foo;</doc>",
 }
 `;
@@ -1581,16 +1411,10 @@ exports[`xmltest/valid standalone should match 115.xml with snapshot 1`] = `
       {
         "columnNumber": 6,
         "lineNumber": 6,
+        "starts": 86,
       },
     ],
   ],
-  "expected": "<doc>v</doc>",
-}
-`;
-
-exports[`xmltest/valid standalone should match 115.xml with snapshot: caught 1`] = `
-{
-  "error": [ParseError: Reporting error "entity not found:&e1;" caused TypeError: expect(...).not.stringMatching is not a function],
   "expected": "<doc>v</doc>",
 }
 `;
@@ -1620,16 +1444,10 @@ exports[`xmltest/valid standalone should match 117.xml with snapshot 1`] = `
       {
         "columnNumber": 6,
         "lineNumber": 5,
+        "starts": 68,
       },
     ],
   ],
-  "expected": "<doc>]</doc>",
-}
-`;
-
-exports[`xmltest/valid standalone should match 117.xml with snapshot: caught 1`] = `
-{
-  "error": [ParseError: Reporting error "entity not found:&rsqb;" caused TypeError: expect(...).not.stringMatching is not a function],
   "expected": "<doc>]</doc>",
 }
 `;
@@ -1648,16 +1466,10 @@ exports[`xmltest/valid standalone should match 118.xml with snapshot 1`] = `
       {
         "columnNumber": 6,
         "lineNumber": 5,
+        "starts": 69,
       },
     ],
   ],
-  "expected": "<doc>]]</doc>",
-}
-`;
-
-exports[`xmltest/valid standalone should match 118.xml with snapshot: caught 1`] = `
-{
-  "error": [ParseError: Reporting error "entity not found:&rsqb;" caused TypeError: expect(...).not.stringMatching is not a function],
   "expected": "<doc>]]</doc>",
 }
 `;
