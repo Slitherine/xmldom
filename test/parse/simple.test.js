@@ -3,6 +3,7 @@
 const { describe, expect, test } = require('@jest/globals');
 const { MIME_TYPE, ParseError } = require('../../lib/conventions');
 const { getTestParser } = require('../get-test-parser');
+const { Document } = require('../../lib/dom');
 
 describe('parse', () => {
 	test('simple', () => {
@@ -97,6 +98,8 @@ describe('exposure', () => {
 
 			const doc = parser.parseFromString('<root/>', 'application/xml');
 
+			expect(doc.constructor).toBe(Document);
+			expect(doc instanceof Document).toBeTruthy();
 			expect(doc.documentElement.constructor).not.toBe(Object);
 		});
 	});
