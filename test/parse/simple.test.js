@@ -80,3 +80,24 @@ describe('parse', () => {
 		});
 	});
 });
+
+describe('exposure', () => {
+	describe('DOMImplementation', () => {
+		test('should not look like a pure object on Document.implementation', () => {
+			const { parser } = getTestParser();
+
+			const doc = parser.parseFromString('<root/>', 'application/xml');
+
+			expect(doc.implementation.constructor).not.toBe(Object);
+		});
+	});
+	describe('Element', () => {
+		test('should not look like a pure object on Document.documentElement', () => {
+			const { parser } = getTestParser();
+
+			const doc = parser.parseFromString('<root/>', 'application/xml');
+
+			expect(doc.documentElement.constructor).not.toBe(Object);
+		});
+	});
+});
