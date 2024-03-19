@@ -4,6 +4,7 @@ const { describe, expect, test } = require('@jest/globals');
 const { MIME_TYPE, ParseError } = require('../../lib/conventions');
 const { getTestParser } = require('../get-test-parser');
 const { Document } = require('../../lib/dom');
+const { DOMParser } = require("../../lib/dom-parser");
 
 describe('parse', () => {
 	test('simple', () => {
@@ -57,27 +58,67 @@ describe('parse', () => {
 		});
 	});
 
-	test('option for errors as text nodes', () => {
-		const { DOMParser } = require('../../lib/dom-parser');
-		const parser = new DOMParser({ locator: true, errorsAsTextNodes: true });
+	describe('option for errors as text nodes', () => {
 
-		const malformed = '<root><child></><><child =</root>';
+		test('malformed xml 1', () => {
+			const { DOMParser } = require('../../lib/dom-parser');
+			const parser = new DOMParser({ locator: true, errorsAsTextNodes: true });
 
-		let dom;
+			const malformed = '<root><child></><><child =</root>';
 
-		expect(() => (dom = parser.parseFromString(malformed, MIME_TYPE.XML_TEXT))).not.toThrow();
+			let dom;
 
-		expect(dom).toMatchObject({
-			documentElement: {
-				nodeName: 'root',
-				firstChild: {
-					nodeName: 'child',
+			expect(() => (dom = parser.parseFromString(malformed, MIME_TYPE.XML_TEXT))).not.toThrow();
+
+			expect(dom).toMatchObject({
+				documentElement: {
+					nodeName: 'root',
 					firstChild: {
-						nodeName: '#text',
-						nodeValue: '</><><child =',
+						nodeName: 'child',
+						firstChild: {
+							nodeName: '#text',
+							nodeValue: '</><><child =',
+						},
 					},
 				},
-			},
+			});
+		});
+		test('malformed xml 2', () => {
+			const { DOMParser } = require('../../lib/dom-parser');
+			const parser = new DOMParser({ locator: true, errorsAsTextNodes: true });
+
+			const malformed = '<root><child></><><child =</root>';
+
+			let dom;
+
+			expect(() => (dom = parser.parseFromString(malformed, MIME_TYPE.XML_TEXT))).not.toThrow();
+
+			expect(dom).toMatchObject({
+				documentElement: {
+					nodeName: 'root',
+					firstChild: {
+						nodeName: 'child',
+						firstChild: {
+							nodeName: '#text',
+							nodeValue: '</><><child =',
+						},
+					},
+				},
+			});
+		});
+		test('malformed xml 3 (deadlock)', () => {
+			const { DOMParser } = require('../../lib/dom-parser');
+			const parser = new DOMParser({ locator: true, errorsAsTextNodes: true });
+
+			const malformed = '<>';
+
+			let dom;
+
+			expect(() => (dom = parser.parseFromString(malformed, MIME_TYPE.XML_TEXT))).not.toThrow();
+
+			expect(dom).toMatchObject({
+				documentElement: null,
+			});
 		});
 	});
 });
