@@ -120,6 +120,20 @@ describe('parse', () => {
 				documentElement: null,
 			});
 		});
+		test('malformed xml 4', () => {
+			const { DOMParser } = require('../../lib/dom-parser');
+			const parser = new DOMParser({ locator: true, errorsAsTextNodes: true });
+
+			const malformed = '<';
+
+			let dom;
+
+			expect(() => (dom = parser.parseFromString(malformed, MIME_TYPE.XML_TEXT))).not.toThrow();
+
+			expect(dom).toMatchObject({
+				documentElement: null,
+			});
+		});
 	});
 });
 
